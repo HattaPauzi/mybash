@@ -583,3 +583,16 @@ eval "$(zoxide init bash)"
 
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 eval "$(atuin init bash)"
+
+# Get the fastest Arch Linux mirrors
+alias httpsmirrors="rate-mirrors --allow-root --protocol https arch | sudo tee /etc/pacman.d/mirrorlist"
+
+# Dev environment
+export PATH="/home/Hatta/.flutter/flutter/bin:$PATH"
+export CHROME_EXECUTABLE="/usr/bin/thorium-browser"
+# Get the fastest Arch Linux mirrors
+alias httpsmirrors="rate-mirrors --allow-root --protocol https arch | sudo tee /etc/pacman.d/mirrorlist"
+
+# Dev environment
+export PATH="/home/Hatta/.flutter/flutter/bin:$PATH"
+export CHROME_EXECUTABLE="/usr/bin/thorium-browser"
