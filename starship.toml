@@ -1,13 +1,13 @@
 format = """
-[](#3B4252)\
+[](#4a4a4a)\
 $python\
 $username\
-[](bg:#434C5E fg:#3B4252)\
+[](bg:#5e5e5e fg:#4a4a4a)\
 $directory\
-[](fg:#434C5E bg:#4C566A)\
+[](fg:#5e5e5e bg:#606060)\
 $git_branch\
 $git_status\
-[](fg:#4C566A bg:#3d3d3d)\
+[](fg:#606060 bg:#3d3d3d)\
 $c\
 $elixir\
 $elm\
@@ -31,12 +31,12 @@ command_timeout = 5000
 # You can also replace your username with a neat symbol like  to save some space
 [username]
 show_always = true
-style_user = "bg:#3B4252"
-style_root = "bg:#3B4252"
+style_user = "bg:#4a4a4a"
+style_root = "bg:#4a4a4a"
 format = '[$user ]($style)'
 
 [directory]
-style = "bg:#434C5E"
+style = "bg:#5e5e5e"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -76,11 +76,11 @@ format = '[ $symbol ($version) ]($style)'
 
 [git_branch]
 symbol = ""
-style = "bg:#4C566A"
+style = "bg:#606060"
 format = '[ $symbol $branch ]($style)'
 
 [git_status]
-style = "bg:#4C566A"
+style = "bg:#606060"
 format = '[$all_status$ahead_behind ]($style)'
 
 [golang]
@@ -114,7 +114,7 @@ style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]($style)'
 
 [python]
-style = "bg:#3B4252"
+style = "bg:#4a4a4a"
 format = '[(\($virtualenv\) )]($style)'
 
 [rust]
