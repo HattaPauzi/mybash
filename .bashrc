@@ -53,8 +53,8 @@ export EDITOR=nvim
 export VISUAL=nvim
 alias pico='edit'
 alias spico='sedit'
-alias nano='edit'
-alias snano='sedit'
+#alias nano='edit'
+#alias snano='sedit'
 alias vim='nvim'
 
 # Replace batcat with cat on Fedora as batcat is not available as a RPM in any form
@@ -560,7 +560,7 @@ eval "$(starship init bash)"
 eval "$(zoxide init bash)"
 
 # Get the fastest Arch Linux mirrors
-alias httpsmirrors="rate-mirrors --allow-root --protocol https arch | sudo tee /etc/pacman.d/mirrorlist"
+alias httpsmirrors="rate-mirrors --top-mirrors-number-to-retest=5 --allow-root --protocol https arch | sudo tee /etc/pacman.d/mirrorlist"
 
 # Disk usage analyzer with an ncurses interface (check storage usage)
 alias checkstorage="ncdu" 
