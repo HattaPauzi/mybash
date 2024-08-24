@@ -565,6 +565,9 @@ alias httpsmirrors="rate-mirrors --top-mirrors-number-to-retest=5 --allow-root -
 # Disk usage analyzer with an ncurses interface (check storage usage)
 alias checkstorage="ncdu" 
 
+# Show orphan packages (an old installed dependency and are no longer required by any package)
+alias checkpacorphan= "pacman -Qdtq"
+
 # Dev environment
 export PATH="/home/Hatta/.flutter/flutter/bin:$PATH"
 export CHROME_EXECUTABLE="/usr/bin/thorium-browser"
