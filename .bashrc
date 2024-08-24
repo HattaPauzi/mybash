@@ -1,1 +1,0 @@
-/home/Hatta/linuxtoolbox/mybash/.bashrc
