@@ -571,3 +571,12 @@ alias checkpacorphan="pacman -Qdtq"
 # Dev environment
 export PATH="/home/Hatta/.flutter/flutter/bin:$PATH"
 export CHROME_EXECUTABLE="/usr/bin/thorium-browser"
+
+#Single cpu thread benchmark for 100 seconds
+alias cpubenchsingle="sysbench cpu run --time=100"
+
+#All cpu thread benchmark for 100 seconds
+cpubenchall() {
+    sysbench --threads=$(nproc) cpu run --time=100
+}
+
