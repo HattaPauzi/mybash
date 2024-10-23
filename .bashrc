@@ -61,11 +61,11 @@ if [[ $iatest -gt 0 ]]; then bind "set show-all-if-ambiguous On"; fi
 # Set the default editor
 export EDITOR=nvim
 export VISUAL=nvim
-<<<<<<< HEAD
-=======
+
+
 alias spico='sudo pico'
 alias snano='sudo nano'
->>>>>>> 0c0b4c038ef541ba5248ae8de686b31cf27bbe51
+
 alias vim='nvim'
 
 # To have colors for ls and all grep commands such as grep, egrep and zgrep
@@ -593,8 +593,8 @@ lazyg() {
 	git push
 }
 
-<<<<<<< HEAD
-=======
+
+
 function hb {
     if [ $# -eq 0 ]; then
         echo "No file path specified."
@@ -614,7 +614,7 @@ function hb {
     fi
 }
 
->>>>>>> 0c0b4c038ef541ba5248ae8de686b31cf27bbe51
+
 #######################################################
 # Set the ultimate amazing command prompt
 #######################################################
@@ -631,7 +631,7 @@ export PATH=$PATH:"$HOME/.local/bin:$HOME/.cargo/bin:/var/lib/flatpak/exports/bi
 
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
-<<<<<<< HEAD
+
 
 # Get the fastest Arch Linux mirrors
 alias httpsmirrors="rate-mirrors --top-mirrors-number-to-retest=5 --allow-root --protocol https arch | sudo tee /etc/pacman.d/mirrorlist"
@@ -654,5 +654,5 @@ cpubenchall() {
     sysbench --threads=$(nproc) cpu run --time=100
 }
 
-=======
->>>>>>> 0c0b4c038ef541ba5248ae8de686b31cf27bbe51
+
+
