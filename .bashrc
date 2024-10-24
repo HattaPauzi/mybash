@@ -654,5 +654,6 @@ cpubenchall() {
     sysbench --threads=$(nproc) cpu run --time=100
 }
 
-
+#Refresh KDE desktop
+alias refreshdesktop="kquitapp5 plasmashell && kstart5 plasmashell"
 
