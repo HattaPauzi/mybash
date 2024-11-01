@@ -637,7 +637,7 @@ eval "$(zoxide init bash)"
 alias httpsmirrors="rate-mirrors --top-mirrors-number-to-retest=5 --allow-root --protocol https arch | sudo tee /etc/pacman.d/mirrorlist"
 
 # Disk usage analyzer with an ncurses interface (check storage usage)
-alias checkstorage="ncdu --color dark" 
+alias checkstorage="ncdu -e --color dark" 
 
 # Show orphan packages (an old installed dependency and are no longer required by any package)
 alias checkpacorphan="pacman -Qdtq"
@@ -657,3 +657,8 @@ cpubenchall() {
 #Refresh KDE desktop
 alias refreshdesktop="kquitapp5 plasmashell && kstart5 plasmashell"
 
+#
+export GTK_IM_MODULE='fcitx'
+export QT_IM_MODULE='fcitx'
+export SDL_IM_MODULE='fcitx'
+export XMODIFIERS='@im=fcitx'
