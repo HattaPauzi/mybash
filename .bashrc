@@ -654,6 +654,10 @@ cpubenchall() {
     sysbench --threads=$(nproc) cpu run --time=100
 }
 
+#better cpu_bench
+#-d duration ; -i iteration ; 
+cpu_bench = 'passmark-performancetest -d 4 -i 3'
+
 #Refresh KDE desktop
 alias refreshdesktop="kquitapp5 plasmashell && kstart5 plasmashell"
 
