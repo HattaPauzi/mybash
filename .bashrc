@@ -661,10 +661,10 @@ cpu_bench() {
 }
 
 #Refresh KDE desktop
-alias refreshdesktop="kquitapp5 plasmashell && kstart5 plasmashell"
+alias refreshdesktop="systemctl --user restart plasma-plasmashell"
 
 #Restart screen brightness settings
-alias restartbrightness="systemctl --user restart plasma-powerdevil.service"
+alias refreshbrightness="systemctl --user restart plasma-powerdevil.service"
 
 #
 export GTK_IM_MODULE='fcitx'
