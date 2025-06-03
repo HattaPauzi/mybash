@@ -635,7 +635,7 @@ eval "$(zoxide init bash)"
 
 # Get the fastest Arch Linux mirrors
 alias httpsmirrors="rate-mirrors --top-mirrors-number-to-retest=3 --allow-root --protocol https arch | sudo tee /etc/pacman.d/mirrorlist"
-alias httpmirrors="rate-mirrors --top-mirrors-number-to-retest=3 --allow-root --protocol arch | sudo tee /etc/pacman.d/mirrorlist"
+alias httpmirrors="rate-mirrors --top-mirrors-number-to-retest=3 --allow-root arch | sudo tee /etc/pacman.d/mirrorlist"
 
 # Disk usage analyzer with an ncurses interface (check storage usage)
 alias checkstorage="gdu" 
