@@ -667,6 +667,10 @@ alias refreshdesktop="systemctl --user restart plasma-plasmashell"
 #Restart screen brightness settings
 alias refreshbrightness="systemctl --user restart plasma-powerdevil.service"
 
+#WPS
+
+alias connectwps="sudo wpa_cli wps_pbc"
+
 #
 export GTK_IM_MODULE='fcitx'
 export QT_IM_MODULE='fcitx'
