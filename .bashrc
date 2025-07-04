@@ -3,9 +3,6 @@ iatest=$(expr index "$-" i)
 #######################################################
 # SOURCED ALIAS'S AND SCRIPTS BY zachbrowne.me
 #######################################################
-if [ -f /usr/bin/fastfetch ]; then
-	fastfetch
-fi
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -92,21 +89,6 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
 #######################################################
-# MACHINE SPECIFIC ALIAS'S
-#######################################################
-
-# Alias's for SSH
-# alias SERVERNAME='ssh YOURWEBSITE.com -l USERNAME -p PORTNUMBERHERE'
-
-# Alias's to change the directory
-alias web='cd /var/www/html'
-
-# Alias's to mount ISO files
-# mount -o loop /home/NAMEOFISO.iso /home/ISOMOUNTDIR/
-# umount /home/NAMEOFISO.iso
-# (Both commands done as root only.)
-
-#######################################################
 # GENERAL ALIAS'S
 #######################################################
 # To temporarily bypass an alias, we precede the command with a \
@@ -115,9 +97,6 @@ alias web='cd /var/www/html'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-# Edit this .bashrc file
-alias ebrc='edit ~/.bashrc'
 
 # Show help for this .bashrc file
 alias hlp='less ~/.bashrc_help'
@@ -510,7 +489,7 @@ function whatsmyip () {
 
     # External IP Lookup
     echo -n "External IP: "
-    curl -4 ifconfig.me
+    curl -s ifconfig.me
 }
 
 # View Apache logs
@@ -595,6 +574,8 @@ lazyg() {
 	git push
 }
 
+
+
 function hb {
     if [ $# -eq 0 ]; then
         echo "No file path specified."
@@ -614,6 +595,7 @@ function hb {
     fi
 }
 
+
 #######################################################
 # Set the ultimate amazing command prompt
 #######################################################
@@ -632,11 +614,46 @@ export PATH=$PATH:"$HOME/.local/bin:$HOME/.cargo/bin:/var/lib/flatpak/exports/bi
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
 
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+# Get the fastest Arch Linux mirrors
+alias httpsmirrors="rate-mirrors --top-mirrors-number-to-retest=3 --allow-root --protocol https arch | sudo tee /etc/pacman.d/mirrorlist"
+alias httpmirrors="rate-mirrors --top-mirrors-number-to-retest=3 --allow-root arch | sudo tee /etc/pacman.d/mirrorlist"
 
-exec startx
+# Disk usage analyzer with an ncurses interface (check storage usage)
+alias checkstorage="gdu" 
 
-fi
+# Show orphan packages (an old installed dependency and are no longer required by any package)
+alias checkpacorphan="pacman -Qdtq"
 
+# Dev environment
+export PATH="/home/Hatta/.flutter/flutter/bin:$PATH"
+export CHROME_EXECUTABLE="/usr/bin/thorium-browser"
 
+#Single cpu thread benchmark for 100 seconds
+alias cpubenchsingle="sysbench cpu run --time=100"
 
+#All cpu thread benchmark for 100 seconds
+cpubenchall() {
+    sysbench --threads=$(nproc) cpu run --time=100
+}
+
+#better cpu_bench
+#-d duration ; -i iteration ; 
+cpu_bench() {
+	passmark-performancetest -d 4 -i 3
+}
+
+#Refresh KDE desktop
+alias refreshdesktop="systemctl --user restart plasma-plasmashell"
+
+#Restart screen brightness settings
+alias refreshbrightness="systemctl --user restart plasma-powerdevil.service"
+
+#WPS
+
+alias connectwps="sudo wpa_cli wps_pbc"
+
+#
+export GTK_IM_MODULE='fcitx'
+export QT_IM_MODULE='fcitx'
+export SDL_IM_MODULE='fcitx'
+export XMODIFIERS='@im=fcitx'
